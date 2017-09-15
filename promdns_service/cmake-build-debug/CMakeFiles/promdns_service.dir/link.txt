@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/promdns_service.dir/main.c.o CMakeFiles/promdns_service.dir/mDNS.c.o CMakeFiles/promdns_service.dir/mDNS_socket.c.o  -o promdns_service 
