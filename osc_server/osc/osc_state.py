@@ -1,18 +1,24 @@
 from collections import OrderedDict
 from util.ins_util import dict_to_jsonstr
+from camera_server import camera_command
+from camera_server import camera_state
 
 class service_osc_state:
     @classmethod
     def get_fingerprint(cls):
-        return '1234567890'
+        global c
+        camera_command.check_state()
+        return str(camera_state)
 
     @classmethod
     def get_batteryLevel(cls):
-        return 1.0
+        camera_command.check_state()
+        return camera_state.c_battery
 
     @classmethod
     def get_storageUri(cls):
-        return "/"
+        camera_command.check_state()
+        return camera_state.c_storage
 
 
     @classmethod

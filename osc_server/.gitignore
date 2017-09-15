@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
-#Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -100,10 +100,3 @@ ENV/
 # mypy
 .mypy_cache/
 
-将删除 .gitignore
-将删除 .idea/
-将删除 __main__.py
-将删除 osc/
-将删除 osc_config.py
-将删除 osc_config.pyc
-将删除 util/

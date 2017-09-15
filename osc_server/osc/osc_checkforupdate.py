@@ -1,6 +1,6 @@
 from collections import OrderedDict
 from util.ins_util import dict_to_jsonstr
-from osc_state import service_osc_state
+from osc.osc_state import service_osc_state
 import time
 
 class service_osc_checkforupdate:
@@ -20,13 +20,14 @@ class service_osc_checkforupdate:
     @classmethod
     def get_response_checkforupdate(cls, parameters):
         res = OrderedDict()
-        if cls.get_throttleTimeout() is 0:
-            if service_osc_state.get_osc_state()==parameters["stateFingerprint"]:
+        tt = cls.get_throttleTimeout()
+        if tt == 0:
+            if service_osc_state.get_osc_state() == parameters["stateFingerprint"]:
                 time.sleep(parameters["waitTimeout"])
             res["stateFingerprint"] = service_osc_state.get_fingerprint()
             res["throttleTimeout"] = 0
         else:
             res["stateFingerprint"] = service_osc_state.get_fingerprint()
-            res["throttleTimeout"] = cls.get_throttleTimeout()
+            res["throttleTimeout"] = tt
             #server error define here
         return dict_to_jsonstr(res)

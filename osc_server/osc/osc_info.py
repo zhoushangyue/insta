@@ -14,7 +14,7 @@ class service_osc_info():
 
     @classmethod
     def get_http_port(cls):
-        return 80
+        return 80  #default should be 80,test use 20000
 
     @classmethod
     def get_http_update_port(cls):
